@@ -1,4 +1,4 @@
-import CleanWebpackPlugin from "clean-webpack-plugin";
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 import paths from "./paths";
 import rules from "./rules";
@@ -13,10 +13,6 @@ module.exports = {
   module: {
     rules
   },
-  plugins: [
-    new CleanWebpackPlugin([paths.outputPath.split("/").pop()], {
-      root: paths.root
-    })
-  ],
+  plugins: [new CleanWebpackPlugin()],
   devtool: "source-map"
 };
